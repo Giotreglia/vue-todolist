@@ -32,12 +32,24 @@ const { createApp } = Vue
                 text: 'Ultimare esercizio',
                 done: false
             },
-        ]
+        ],
+        nuovaTask : ''
       }
     },
     methods: {
         removeTask(index) {
             this.tasks.splice(index, 1);
+        },
+        addTask() {
+            if (this.nuovaTask.length < 1) {
+                console.log('parola corta');
+            } else {
+            const newTask = {
+                text: this.nuovaTask,
+                done: false
+            };
+            this.tasks.push(newTask);
+            this.nuovaTask = '';}
         }
     },
   }).mount('#app')

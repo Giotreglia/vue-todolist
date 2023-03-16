@@ -81,8 +81,11 @@ header {
     list-style: none;
 }
 
-#task-list h1 {
+#notask-text {
     padding: 0 50px;
+    color: rgb(0, 21, 51);
+    font-weight: bold;
+    text-align: center;
 }
 
 #task {
@@ -101,6 +104,17 @@ header {
 
 .line-through {
     text-decoration: line-through;
+}
+
+/* Hover */
+
+#task:hover {
+    background-color: rgb(0, 21, 51);
+    color: white;
+}
+
+#task i:hover {
+    scale: 1.2;
 }
 
 

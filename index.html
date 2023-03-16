@@ -25,18 +25,18 @@
             <!-- Button menù -->
             <nav id="button_menu">
                 <div id="button_container">
-                    <input id="text-input" type="text" placeholder="Inserisci nuova task">
-                    <button id="add_button">Aggiungi</button>
+                    <input id="text-input" type="text" placeholder="Inserisci nuova task" v-model="nuovaTask">
+                    <button id="add_button" @click="addTask">Aggiungi</button>
                 </div>
             </nav>
 
             <div id="task-container">
                 <ul id="task-list">
-                    <li id="task" v-for="(task, index) in tasks" :class="(task.done == true)?'line-through':''" v-if="tasks.length > 0">
-                        <span>{{task.text}}</span> 
+                    <li id="task" v-for="(task, index) in tasks" v-if="tasks.length > 0">
+                        <span :class="(task.done == true)?'line-through':''">{{task.text}}</span> 
                         <i class="fa-solid fa-xmark" @click="removeTask(index)"></i>
                     </li>
-                    <h1 v-else>Bravo, sei libero!</h1>
+                    <div id="notask-text" v-else>Bravo, sei libero!</div>
                 </ul>
             </div>
 
