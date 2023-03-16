@@ -106,6 +106,12 @@ header {
     text-decoration: line-through;
 }
 
+#error {
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
+}
+
 /* Hover */
 
 #task:hover {

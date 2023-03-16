@@ -33,7 +33,8 @@ const { createApp } = Vue
                 done: false
             },
         ],
-        nuovaTask : ''
+        nuovaTask : '',
+        error : false
       }
     },
     methods: {
@@ -41,15 +42,18 @@ const { createApp } = Vue
             this.tasks.splice(index, 1);
         },
         addTask() {
-            if (this.nuovaTask.length < 1) {
-                console.log('parola corta');
+            if (this.nuovaTask.length == 0) {
+                this.error = true;
+                this.nuovaTask = '';
             } else {
-            const newTask = {
-                text: this.nuovaTask,
-                done: false
-            };
-            this.tasks.push(newTask);
-            this.nuovaTask = '';}
+                this.error = false;
+                const newTask = {
+                    text: this.nuovaTask,
+                    done: false
+                };
+                this.tasks.push(newTask);
+                this.nuovaTask = '';
+            }
         }
     },
   }).mount('#app')
