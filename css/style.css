@@ -88,6 +88,15 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
+    cursor: pointer;
+}
+
+#task i {
+    cursor: pointer;
+}
+
+.line-through {
+    text-decoration: line-through;
 }
 
 

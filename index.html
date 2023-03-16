@@ -32,16 +32,8 @@
 
             <div id="task-container">
                 <ul id="task-list">
-                    <li id="task">
-                        <span>Creare repository vue-todolist</span> 
-                        <i class="fa-solid fa-xmark"></i>
-                    </li>
-                    <li id="task">
-                        <span>Creare repository vue-todolist</span> 
-                        <i class="fa-solid fa-xmark"></i>
-                    </li>
-                    <li id="task">
-                        <span>Creare repository vue-todolist</span> 
+                    <li id="task" v-for="task in tasks" :class="(task.done == true)?'line-through':''">
+                        <span>{{task.text}}</span> 
                         <i class="fa-solid fa-xmark"></i>
                     </li>
                 </ul>
