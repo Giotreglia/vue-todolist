@@ -7,17 +7,18 @@ const { createApp } = Vue
             {
                 text: 'Creare repository vue-todolist',
                 done: true
+                
             },
             {
-                text: 'MILESTONE 1',
+                text: 'Milestone 1',
                 done: false
             },
             {
-                text: 'MILESTONE 2',
+                text: 'Milestone 2',
                 done: false
             },
             {
-                text: 'MILESTONE 3',
+                text: 'Milestone 3',
                 done: false
             },
             {
@@ -34,7 +35,7 @@ const { createApp } = Vue
             },
         ],
         nuovaTask : '',
-        error : false
+        error : false,
       }
     },
     methods: {
@@ -53,6 +54,13 @@ const { createApp } = Vue
                 };
                 this.tasks.push(newTask);
                 this.nuovaTask = '';
+            }
+        },
+        invert(index) {
+            if (this.tasks[index].done) {
+                this.tasks[index].done = false;
+            } else {
+                this.tasks[index].done = true;
             }
         }
     },
