@@ -26,13 +26,18 @@ const { createApp } = Vue
             },
             {
                 text: 'Bonus 2',
-                done: true
+                done: false
             },
             {
                 text: 'Ultimare esercizio',
-                done: true
+                done: false
             },
         ]
       }
-    }
+    },
+    methods: {
+        removeTask(index) {
+            this.tasks.splice(index, 1);
+        }
+    },
   }).mount('#app')

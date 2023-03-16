@@ -32,10 +32,11 @@
 
             <div id="task-container">
                 <ul id="task-list">
-                    <li id="task" v-for="task in tasks" :class="(task.done == true)?'line-through':''">
+                    <li id="task" v-for="(task, index) in tasks" :class="(task.done == true)?'line-through':''" v-if="tasks.length > 0">
                         <span>{{task.text}}</span> 
-                        <i class="fa-solid fa-xmark"></i>
+                        <i class="fa-solid fa-xmark" @click="removeTask(index)"></i>
                     </li>
+                    <h1 v-else>Bravo, sei libero!</h1>
                 </ul>
             </div>
 
