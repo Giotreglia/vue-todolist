@@ -25,7 +25,7 @@
             <!-- Button menù -->
             <nav id="button_menu">
                 <div id="button_container">
-                    <input id="text-input" type="text" placeholder="Inserisci nuova task" v-model="nuovaTask">
+                    <input id="text-input" type="text" placeholder="Inserisci nuova task" v-model="nuovaTask" @keyup.enter="addTask">
                     <button id="add_button" @click="addTask">Aggiungi</button>
                 </div>
                 <div id="error" v-show="error">Errore, inserisci una task prima di premere aggiungi</div>
