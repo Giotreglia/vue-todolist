@@ -6,7 +6,7 @@ const { createApp } = Vue
         tasks: [
             {
                 text: 'Creare repository vue-todolist',
-                done: true
+                done: false
                 
             },
             {
@@ -52,7 +52,7 @@ const { createApp } = Vue
                     text: this.nuovaTask,
                     done: false
                 };
-                this.tasks.push(newTask);
+                this.tasks.unshift(newTask);
                 this.nuovaTask = '';
             }
         },
